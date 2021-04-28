@@ -36,13 +36,6 @@ function App() {
    setEditingId("");
  }
  
-
- function updateTask(){
-  const localTasks = localStorage.getItem('@tasks');
-  if(!!localTasks){
-    setTasks(JSON.parse(localTasks));
-  }
-  }
   
  function editTask(id){
    
@@ -54,8 +47,11 @@ function App() {
  }
 
  useEffect(()=>{
-  updateTask();
- },[])
+  const localTasks = localStorage.getItem('@tasks');
+  if(!!localTasks){
+    setTasks(JSON.parse(localTasks));
+  }
+ },[localStorage])
 
  function deleteTask(id) {
     const filteredTasks = tasks.filter((task) => task.id !== id);
