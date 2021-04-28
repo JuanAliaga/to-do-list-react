@@ -38,11 +38,10 @@ function App() {
  
 
  function updateTask(){
-   const localTasks = localStorage.getItem('@tasks');
-   if(!!localTasks){
-     setTasks(JSON.parse(localTasks));
-     console.log(tasks)
-   }
+  const localTasks = localStorage.getItem('@tasks');
+  if(!!localTasks){
+    setTasks(JSON.parse(localTasks));
+  }
   }
   
  function editTask(id){
@@ -55,7 +54,7 @@ function App() {
  }
 
  useEffect(()=>{
-   updateTask();
+  updateTask();
  },[])
 
  function deleteTask(id) {
