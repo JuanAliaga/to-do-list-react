@@ -51,7 +51,7 @@ function App() {
   if(!!localTasks){
     setTasks(JSON.parse(localTasks));
   }
- },[localStorage])
+ },[])
 
  function deleteTask(id) {
     const filteredTasks = tasks.filter((task) => task.id !== id);
